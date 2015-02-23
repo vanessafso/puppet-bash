@@ -15,65 +15,76 @@
 
 ## Overview
 
-A one-maybe-two sentence summary of what the module does/what problem it solves.
-This is your 30 second elevator pitch for your module. Consider including
-OS/Puppet version it works with.
+This module makes sure the BASH shell is installed and allows you to override any BASH environment variable you wish. Support for per user variables will be included in a future release.
 
 ## Module Description
 
-If applicable, this section should have a brief description of the technology
-the module integrates with and what that integration enables. This section
-should answer the questions: "What does this module *do*?" and "Why would I use
-it?"
-
-If your module has a range of functionality (installation, configuration,
-management, etc.) this is the time to mention it.
+As this module manages BASH environment variables it also installs BASH. The name of the package used to install BASH can be overriden if your platform differs from the default package name set by this module.
 
 ## Setup
 
 ### What bashprofile affects
 
-* A list of files, packages, services, or operations that the module will alter,
-  impact, or execute on the system it's installed on.
-* This is a great place to stick any warnings.
-* Can be in list or paragraph form.
-
-### Setup Requirements **OPTIONAL**
-
-If your module requires anything extra before setting up (pluginsync enabled,
-etc.), mention it here.
+* The BASH package (```bash``` on most platforms).
+* System wide environment variables.
 
 ### Beginning with bashprofile
 
-The very basic steps needed for a user to get the module up and running.
+You can use this module to manage just a single environment variable like so:
 
-If your most recent release breaks compatibility or requires particular steps
-for upgrading, you may wish to include an additional section here: Upgrading
-(For an example, see http://forge.puppetlabs.com/puppetlabs/firewall).
+```puppet
+class { '::bashprofile':
+  bash_variables => {
+    'histtimeformat' => '%d.%m.%y %T ',
+  }
+}
+```
 
 ## Usage
 
-Put the classes, types, and resources for customizing, configuring, and doing
-the fancy stuff with your module here.
+You can set as many environment variables as desired like so:
+
+```puppet
+class { '::bashprofile':
+  bash_variables => {
+    'histtimeformat' => '%d.%m.%y %T ',
+    'histsize'       => '2000',
+    'editor'         => '/usr/bin/emacs',
+    'pager'          => 'more',
+  }
+}
+```
 
 ## Reference
 
-Here, list the classes, types, providers, facts, etc contained in your module.
-This section should include all of the under-the-hood workings of your module so
-people know what the module is touching on their system but don't need to mess
-with things. (We are working on automating this section!)
+### Classes
+
+#### Public Classes
+
+* `::bashprofile`: Installs BASH, adds requested environment variables under `/etc/profile.d/`.
+
+### Global Parameters
+
+#### `package_name`
+
+Name of the BASH package that is to be installed.
+
+Default: `bash`
+
+#### `bash_variables`
+
+A hash of the environemnt variables to be added under `/etc/profile.d/`.
+
+Default: N/A
 
 ## Limitations
 
-This is where you list OS compatibility, version compatibility, etc.
+This has only been tested on RedHat family systems. In theory it should work out of the box on any system where the BASH shell package name is `bash` and the `/etc/profile.d/` directory exists.
 
 ## Development
 
-Since your module is awesome, other users will want to play with it. Let them
-know what the ground rules for contributing are.
+Contributions are welcome in any form, pull requests, and issues should be filed via GitHub.
 
-## Release Notes/Contributors/Etc **Optional**
+###Contributors
 
-If you aren't using changelog, put your release notes here (though you should
-consider using changelog). You may also add any additional sections you feel are
-necessary or important to include here. Please use the `## ` header.
+The list of contributors can be found at: [https://github.com/kemra102/puppet-bashprofile/graphs/contributors](https://github.com/kemra102/puppet-bashprofile/graphs/contributors)

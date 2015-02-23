@@ -1,41 +1,51 @@
 # == Class: bashprofile
 #
-# Full description of class bashprofile here.
+# This class makes sure the BASH shell is installed and allows you to
+# override any BASH environment variable you wish.
 #
 # === Parameters
 #
 # Document parameters here.
 #
-# [*sample_parameter*]
-#   Explanation of what this parameter affects and what it defaults to.
-#   e.g. "Specify one or more upstream ntp servers as an array."
+# [*package_name*]
+#   Package name of the BASH shell on your platform.
 #
-# === Variables
-#
-# Here you should define a list of variables that this module would require.
-#
-# [*sample_variable*]
-#   Explanation of how this variable affects the funtion of this class and if
-#   it has a default. e.g. "The parameter enc_ntp_servers must be set by the
-#   External Node Classifier as a comma separated list of hostnames." (Note,
-#   global variables should be avoided in favor of class parameters as
-#   of Puppet 2.6.)
+# [*bash_variables*]
+#   A hash of the BASH environment variables you wish to set.
 #
 # === Examples
 #
 #  class { 'bashprofile':
-#    servers => [ 'pool.ntp.org', 'ntp.local.company.com' ],
+#    bash_variables => {
+#      'item' => 'value',
+#    }    
 #  }
 #
 # === Authors
 #
-# Author Name <author@domain.com>
+# Danny Roberts <danny@thefallenphoenix.net>
 #
 # === Copyright
 #
-# Copyright 2015 Your name here, unless otherwise noted.
+# Copyright 2015 Danny Roberts
 #
 class bashprofile {
 
+  $package_name   = 'bash'
+  $bash_variables = {}
+
+  validate_hash($bash_variables)
+
+  package { $package_name:
+    ensure => 'present',
+  }
+
+  file { '/etc/profile.d/puppet_managed.sh':
+    ensure  => 'file',
+    content => template('bashprofile/etc-profile.erb'),
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644',
+  }
 
 }

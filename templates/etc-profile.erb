@@ -1,0 +1,6 @@
+### MANAGED BY PUPPET ###
+
+<% @bash_variables.sort.map do |k,v| -%>
+<%= k.upcase %>="<%= v %>"
+export <%= k.upcase %>
+<% end -%>
