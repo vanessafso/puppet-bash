@@ -1,7 +1,7 @@
 {
-  "name": "puppet-bashprofile",
+  "name": "kemra102-bashprofile",
   "version": "0.1.0",
-  "author": "kemra102",
+  "author": "Danny Roberts",
   "summary": "Manage the BASH profile settings.",
   "license": "BSD-2-Clause",
   "source": "https://github.com/kemra102/puppet-bashprofile",
