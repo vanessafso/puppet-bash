@@ -1,0 +1,2 @@
+# Ignore puppet module packages
+pkg/
