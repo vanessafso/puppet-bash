@@ -55,6 +55,19 @@ class { '::bashprofile':
 }
 ```
 
+Or in Hiera:
+
+```yaml
+---
+classes:
+  - bashprofile
+bashprofile::bash_variables:
+  histtimeformat: '%d.%m.%y %T '
+  histsize: '2000'
+  editor: '/usr/bin/emacs'
+  pager: 'more'
+```
+
 ## Reference
 
 ### Classes
