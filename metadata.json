@@ -7,7 +7,7 @@
   "source": "https://github.com/kemra102/puppet-bashprofile",
   "project_page": "https://github.com/kemra102/puppet-bashprofile",
   "issues_url": "https://github.com/kemra102/puppet-bashprofile/issues",
-  "tags": ["bash", "profile"]
+  "tags": ["bash", "profile"],
   "operatingsystem_support": [
     {
     "operatingsystem":"RedHat",
