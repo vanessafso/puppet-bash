@@ -86,7 +86,7 @@ Default: `bash`
 
 #### `bash_variables`
 
-A hash of the environemnt variables to be added under `/etc/profile.d/`.
+A hash of the environment variables to be added under `/etc/profile.d/`.
 
 Default: N/A
 
