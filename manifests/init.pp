@@ -29,10 +29,12 @@
 #
 # Copyright 2015 Danny Roberts
 #
-class bashprofile {
+class bashprofile (
 
-  $package_name   = 'bash'
-  $bash_variables = {}
+  $package_name   = 'bash',
+  $bash_variables = {},
+
+) {
 
   validate_hash($bash_variables)
 
