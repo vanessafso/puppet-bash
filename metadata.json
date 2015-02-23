@@ -1,0 +1,14 @@
+{
+  "name": "puppet-bashprofile",
+  "version": "0.1.0",
+  "author": "kemra102",
+  "summary": "Manage the BASH profile settings.",
+  "license": "BSD-2-Clause",
+  "source": "https://github.com/kemra102/puppet-bashprofile",
+  "project_page": "https://github.com/kemra102/puppet-bashprofile",
+  "issues_url": "https://github.com/kemra102/puppet-bashprofile/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ]
+}
+
