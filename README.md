@@ -87,6 +87,7 @@ bashprofile::user { 'root':
     'editor' => '/usr/bin/vim',
   },
 }
+```
 
 ## Reference
 
