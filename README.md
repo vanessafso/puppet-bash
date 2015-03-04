@@ -68,6 +68,26 @@ bashprofile::bash_variables:
   pager: 'more'
 ```
 
+You can also configure user specific environment variables:
+
+```puppet
+bashprofile::user { 'jane.doe':
+  environment_variables => {
+    'editor' => '/usr/bin/vim',
+  },
+}
+```
+
+If the user also has a none standard home directoy (such as the root user) you can do that too:
+
+```puppet
+bashprofile::user { 'root':
+  homedir               => '/root',
+  environment_variables => {
+    'editor' => '/usr/bin/vim',
+  },
+}
+
 ## Reference
 
 ### Classes
