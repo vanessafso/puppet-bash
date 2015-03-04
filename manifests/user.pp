@@ -1,6 +1,6 @@
 define bashprofile::user (
   $user                  = $name,
-  $homedir               = "/home/${user}"
+  $homedir               = "/home/${user}",
   $environment_variables = {},
 ) {
 
