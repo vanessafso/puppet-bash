@@ -1,2 +1,8 @@
 # Ignore puppet module packages
 pkg/
+
+# Spec test
+spec/fixtures/
+
+# Temp files
+*.swp
