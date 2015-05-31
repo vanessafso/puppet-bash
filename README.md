@@ -1,4 +1,4 @@
-# bashprofile
+# bashprofile [![Build Status](https://travis-ci.org/kemra102/puppet-bashprofile.svg?branch=master)](https://travis-ci.org/kemra102/puppet-bashprofile)
 
 #### Table of Contents
 
