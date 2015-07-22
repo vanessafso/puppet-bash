@@ -2,4 +2,4 @@ fixtures:
   repositories:
     stdlib: git://github.com/puppetlabs/puppetlabs-stdlib.git
   symlinks:
-    bashprofile: "#{source_dir}"
+    bash: "#{source_dir}"

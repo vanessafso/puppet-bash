@@ -1,8 +1,8 @@
 require 'spec_helper'
-describe 'bashprofile', :type => :class do
+describe 'bash', :type => :class do
   context 'with a single variable' do
     let (:params) {{
-      'bash_variables' => { 'editor' => '/usr/bin/emacs' }
+      'env_variables' => { 'editor' => '/usr/bin/emacs' }
     }}
     it {
       should contain_package('bash').with_ensure('present')
@@ -18,7 +18,7 @@ describe 'bashprofile', :type => :class do
   end
   context 'with multiple variables' do
     let (:params) {{
-      'bash_variables' => {
+      'env_variables' => {
         'histsize' => '2000',
         'editor'   => '/usr/bin/emacs',
         'pager'    => 'more',

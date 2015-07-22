@@ -31,7 +31,7 @@
 #
 class bash (
 
-  $package_name   = 'bash',
+  $package_name  = 'bash',
   $env_variables = {},
 
 ) {

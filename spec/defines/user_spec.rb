@@ -1,9 +1,9 @@
 require 'spec_helper'
-describe 'bashprofile::user', :type => :define do
+describe 'bash::user', :type => :define do
   context 'with a single variable and standard user directory' do
     let (:title) { 'jane.doe' }
     let (:params) {{
-      'environment_variables' => { 'editor' => '/usr/bin/emacs' }
+      'env_variables' => { 'editor' => '/usr/bin/emacs' }
     }}
     it {
       should contain_file('/home/jane.doe/.bash_profile').with({
@@ -18,8 +18,8 @@ describe 'bashprofile::user', :type => :define do
   context 'with multiple variables and none-standard user directory' do
     let (:title) { 'jane.doe' }
     let (:params) {{
-      'homedir'               => '/root',
-      'environment_variables' => {
+      'homedir'       => '/root',
+      'env_variables' => {
         'editor' => '/usr/bin/emacs',
         'pager'  => 'more',
       }
