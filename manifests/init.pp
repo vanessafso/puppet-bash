@@ -1,4 +1,4 @@
-# == Class: bashprofile
+# == Class: bash
 #
 # This class makes sure the BASH shell is installed and allows you to
 # override any BASH environment variable you wish.
@@ -10,13 +10,13 @@
 # [*package_name*]
 #   Package name of the BASH shell on your platform.
 #
-# [*bash_variables*]
+# [*env_variables*]
 #   A hash of the BASH environment variables you wish to set.
 #
 # === Examples
 #
-#  class { 'bashprofile':
-#    bash_variables => {
+#  class { 'bash':
+#    env_variables => {
 #      'item' => 'value',
 #    }    
 #  }
@@ -29,14 +29,14 @@
 #
 # Copyright 2015 Danny Roberts
 #
-class bashprofile (
+class bash (
 
   $package_name   = 'bash',
-  $bash_variables = {},
+  $env_variables = {},
 
 ) {
 
-  validate_hash($bash_variables)
+  validate_hash($env_variables)
 
   package { $package_name:
     ensure => 'present',
@@ -44,7 +44,7 @@ class bashprofile (
 
   file { '/etc/profile.d/puppet_managed.sh':
     ensure  => 'file',
-    content => template('bashprofile/etc-profile.erb'),
+    content => template('bash/etc-profile.erb'),
     owner   => 'root',
     group   => 'root',
     mode    => '0644',

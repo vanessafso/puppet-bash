@@ -1,4 +1,4 @@
-class bashprofile::autocomplete::systemd_detect_virt {
+class bash::autocomplete::systemd_detect_virt {
 
   if $::systemd_available {
     file { '/etc/profile.d/systemd-detect-virt.sh':
@@ -6,7 +6,7 @@ class bashprofile::autocomplete::systemd_detect_virt {
       owner  => 'root',
       group  => 'root',
       mode   => '0644',
-      source => 'puppet:///modules/bashprofile/systemd-detect-virt.sh',
+      source => 'puppet:///modules/bash/systemd-detect-virt.sh',
     }
   }
 

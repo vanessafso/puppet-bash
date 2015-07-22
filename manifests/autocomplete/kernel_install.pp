@@ -1,4 +1,4 @@
-class bashprofile::autocomplete::kernel_install {
+class bash::autocomplete::kernel_install {
 
   if $::systemd_available {
     file { '/etc/profile.d/kernel-install.sh':
@@ -6,7 +6,7 @@ class bashprofile::autocomplete::kernel_install {
       owner  => 'root',
       group  => 'root',
       mode   => '0644',
-      source => 'puppet:///modules/bashprofile/kernel-install.sh',
+      source => 'puppet:///modules/bash/kernel-install.sh',
     }
   }
 

@@ -1,4 +1,4 @@
-class bashprofile::autocomplete::timedatectl {
+class bash::autocomplete::timedatectl {
 
   if $::systemd_available {
     file { '/etc/profile.d/timedatectl.sh':
@@ -6,7 +6,7 @@ class bashprofile::autocomplete::timedatectl {
       owner  => 'root',
       group  => 'root',
       mode   => '0644',
-      source => 'puppet:///modules/bashprofile/timedatectl.sh',
+      source => 'puppet:///modules/bash/timedatectl.sh',
     }
   }
 

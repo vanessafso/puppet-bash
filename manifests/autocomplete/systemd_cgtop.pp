@@ -1,4 +1,4 @@
-class bashprofile::autocomplete::systemd_cgtop {
+class bash::autocomplete::systemd_cgtop {
 
   if $::systemd_available {
     file { '/etc/profile.d/systemd-cgtop.sh':
@@ -6,7 +6,7 @@ class bashprofile::autocomplete::systemd_cgtop {
       owner  => 'root',
       group  => 'root',
       mode   => '0644',
-      source => 'puppet:///modules/bashprofile/systemd-cgtop.sh',
+      source => 'puppet:///modules/bash/systemd-cgtop.sh',
     }
   }
 

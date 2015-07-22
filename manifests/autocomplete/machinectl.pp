@@ -1,4 +1,4 @@
-class bashprofile::autocomplete::machinectl {
+class bash::autocomplete::machinectl {
 
   if $::systemd_available {
     file { '/etc/profile.d/machinectl.sh':
@@ -6,7 +6,7 @@ class bashprofile::autocomplete::machinectl {
       owner  => 'root',
       group  => 'root',
       mode   => '0644',
-      source => 'puppet:///modules/bashprofile/machinectl.sh',
+      source => 'puppet:///modules/bash/machinectl.sh',
     }
   }
 

@@ -1,4 +1,4 @@
-class bashprofile::autocomplete::loginctl {
+class bash::autocomplete::loginctl {
 
   if $::systemd_available {
     file { '/etc/profile.d/loginctl.sh':
@@ -6,7 +6,7 @@ class bashprofile::autocomplete::loginctl {
       owner  => 'root',
       group  => 'root',
       mode   => '0644',
-      source => 'puppet:///modules/bashprofile/loginctl.sh',
+      source => 'puppet:///modules/bash/loginctl.sh',
     }
   }
 

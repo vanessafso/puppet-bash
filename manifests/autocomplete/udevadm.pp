@@ -1,4 +1,4 @@
-class bashprofile::autocomplete::udevadm {
+class bash::autocomplete::udevadm {
 
   if $::systemd_available {
     file { '/etc/profile.d/udevadm.sh':
@@ -6,7 +6,7 @@ class bashprofile::autocomplete::udevadm {
       owner  => 'root',
       group  => 'root',
       mode   => '0644',
-      source => 'puppet:///modules/bashprofile/udevadm.sh',
+      source => 'puppet:///modules/bash/udevadm.sh',
     }
   }
 

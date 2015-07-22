@@ -1,4 +1,4 @@
-class bashprofile::autocomplete::hostnamectl {
+class bash::autocomplete::hostnamectl {
 
   if $::systemd_available {
     file { '/etc/profile.d/hostnamectl.sh':
@@ -6,7 +6,7 @@ class bashprofile::autocomplete::hostnamectl {
       owner  => 'root',
       group  => 'root',
       mode   => '0644',
-      source => 'puppet:///modules/bashprofile/hostnamectl.sh',
+      source => 'puppet:///modules/bash/hostnamectl.sh',
     }
   }
 

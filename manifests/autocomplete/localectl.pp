@@ -1,4 +1,4 @@
-class bashprofile::autocomplete::localectl {
+class bash::autocomplete::localectl {
 
   if $::systemd_available {
     file { '/etc/profile.d/localectl.sh':
@@ -6,7 +6,7 @@ class bashprofile::autocomplete::localectl {
       owner  => 'root',
       group  => 'root',
       mode   => '0644',
-      source => 'puppet:///modules/bashprofile/localectl.sh',
+      source => 'puppet:///modules/bash/localectl.sh',
     }
   }
 

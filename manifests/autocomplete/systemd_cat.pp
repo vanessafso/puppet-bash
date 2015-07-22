@@ -1,4 +1,4 @@
-class bashprofile::autocomplete::systemd_cat {
+class bash::autocomplete::systemd_cat {
 
   if $::systemd_available {
     file { '/etc/profile.d/systemd-cat.sh':
@@ -6,7 +6,7 @@ class bashprofile::autocomplete::systemd_cat {
       owner  => 'root',
       group  => 'root',
       mode   => '0644',
-      source => 'puppet:///modules/bashprofile/systemd-cat.sh',
+      source => 'puppet:///modules/bash/systemd-cat.sh',
     }
   }
 

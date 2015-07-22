@@ -1,4 +1,4 @@
-class bashprofile::autocomplete::busctl {
+class bash::autocomplete::busctl {
 
   if $::systemd_available {
     file { '/etc/profile.d/bustctl.sh':
@@ -6,7 +6,7 @@ class bashprofile::autocomplete::busctl {
       owner  => 'root',
       group  => 'root',
       mode   => '0644',
-      source => 'puppet:///modules/bashprofile/bustctl.sh',
+      source => 'puppet:///modules/bash/bustctl.sh',
     }
   }
 

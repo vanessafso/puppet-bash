@@ -1,4 +1,4 @@
-class bashprofile::autocomplete::bash_completion (
+class bash::autocomplete::bash_completion (
   $epel_class = '::epel',
 
 ) {

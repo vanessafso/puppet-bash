@@ -1,4 +1,4 @@
-class bashprofile::autocomplete::bootctl {
+class bash::autocomplete::bootctl {
 
   if $::systemd_available {
     file { '/etc/profile.d/bootctl.sh':
@@ -6,7 +6,7 @@ class bashprofile::autocomplete::bootctl {
       owner  => 'root',
       group  => 'root',
       mode   => '0644',
-      source => 'puppet:///modules/bashprofile/bootctl.sh',
+      source => 'puppet:///modules/bash/bootctl.sh',
     }
   }
 

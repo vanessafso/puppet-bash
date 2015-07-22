@@ -1,4 +1,4 @@
-class bashprofile::autocomplete::systemctl {
+class bash::autocomplete::systemctl {
 
   if $::systemd_available {
     file { '/etc/profile.d/systemctl.sh':
@@ -6,7 +6,7 @@ class bashprofile::autocomplete::systemctl {
       owner  => 'root',
       group  => 'root',
       mode   => '0644',
-      source => 'puppet:///modules/bashprofile/systemctl.sh',
+      source => 'puppet:///modules/bash/systemctl.sh',
     }
   }
 

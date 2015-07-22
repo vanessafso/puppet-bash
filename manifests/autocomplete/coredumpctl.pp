@@ -1,4 +1,4 @@
-class bashprofile::autocomplete::coredumpctl {
+class bash::autocomplete::coredumpctl {
 
   if $::systemd_available {
     file { '/etc/profile.d/coredumpctl.sh':
@@ -6,7 +6,7 @@ class bashprofile::autocomplete::coredumpctl {
       owner  => 'root',
       group  => 'root',
       mode   => '0644',
-      source => 'puppet:///modules/bashprofile/coredumpctl.sh',
+      source => 'puppet:///modules/bash/coredumpctl.sh',
     }
   }
 

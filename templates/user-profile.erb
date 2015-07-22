@@ -1,6 +1,6 @@
 ### MANAGED BY PUPPET ###
 
-<% @environment_variables.sort.map do |k,v| -%>
+<% @env_variables.sort.map do |k,v| -%>
 <%= k.upcase %>="<%= v %>"
 export <%= k.upcase %>
 <% end -%>
