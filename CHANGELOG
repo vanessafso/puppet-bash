@@ -7,3 +7,7 @@ v1.0.0:
 v1.0.2:
   - Lint fixes.
   - Added testing.
+
+v2.0.0:
+  - Switched module name in order to expand scope of module.
+  - Added auto completion.
