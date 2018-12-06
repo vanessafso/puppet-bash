@@ -1,6 +1,6 @@
 # bash [![Build Status](https://travis-ci.org/kemra102/puppet-bash.svg?branch=master)](https://travis-ci.org/kemra102/puppet-bash)
 
-### Module Source: https://github.com/kemra102/puppet-bash
+Module Source: 'kemra102/puppet-bash' '2.0.0'
 
 #### Table of Contents
 
